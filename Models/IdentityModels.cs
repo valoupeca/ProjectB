@@ -29,5 +29,7 @@ namespace ProjectBv2.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<ProjectBv2.Models.Benevoles> Benevoles { get; set; }
     }
 }
