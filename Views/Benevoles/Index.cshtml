@@ -10,43 +10,61 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.nom)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.prenom)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.poste)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.nb_jour)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.nom)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.prenom)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.poste)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nb_jour)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
-}
+<form asp-controller="Benevoles" asp-action="Index" method="get">
+    <p>
+        Nom : <input type="text" name="searchString" />
+        <input type="submit" value="Filtre" />
+    </p>
+</form>
+<button type="button" class="btn btn-light">
+    @Html.ActionLink("Benevoles", "Index", "Benevoles")
+</button>
+<table class="table table-bordered table-striped table-sm">
+    @if (ViewBag.MessageWarning != null)
+    {
+        <p>@ViewBag.MessageWarning</p>
+    }
+    else
+    {
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.prenom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.poste)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nb_jour)
+            </th>
+            <th></th>
+        </tr>
+    }
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.prenom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.poste)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nb_jour)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
 
 </table>

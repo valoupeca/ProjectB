@@ -15,9 +15,21 @@ namespace ProjectBv2.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Benevoles
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
-            return View(db.Benevoles.ToList());
+            var benevoles = from b in db.Benevoles
+                            select b;
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                benevoles = benevoles.Where(s => s.nom.Contains(searchString));
+            }
+
+            if (!benevoles.Any())
+            {
+                ViewBag.MessageWarning = "Aucun résultats ne correspond à votre recherche.";
+            }
+            return View(benevoles.ToList());
         }
 
         // GET: Benevoles/Details/5
