@@ -34,7 +34,12 @@ namespace ProjectBv2.Controllers
             }
             return View(benevoles);
         }
-
+        //Print Page Into PDF
+        public ActionResult PrintBenevoles(int id)
+        {
+            var report = new Rotativa.ActionAsPdf("Details", new { id = id });
+            return report;
+        }
         // GET: Benevoles/Create
         public ActionResult Create()
         {
