@@ -31,5 +31,7 @@ namespace ProjectBv2.Models
         }
 
         public System.Data.Entity.DbSet<ProjectBv2.Models.Benevoles> Benevoles { get; set; }
+
+        public System.Data.Entity.DbSet<ProjectBv2.Models.Postes> Postes { get; set; }
     }
 }

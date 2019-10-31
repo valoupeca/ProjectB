@@ -51,6 +51,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -174,13 +175,24 @@
     <Compile Include="Controllers\BenevolesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PostesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910280934451_InitialCreate.cs" />
+    <Compile Include="Migrations\201910280934451_InitialCreate.Designer.cs">
+      <DependentUpon>201910280934451_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910311506226_AddBenevoleInfo.cs" />
+    <Compile Include="Migrations\201910311506226_AddBenevoleInfo.Designer.cs">
+      <DependentUpon>201910311506226_AddBenevoleInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Benevoles.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Postes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -250,6 +262,12 @@
     <Content Include="Views\Benevoles\Details.cshtml" />
     <Content Include="Views\Benevoles\Edit.cshtml" />
     <Content Include="Views\Benevoles\Index.cshtml" />
+    <Content Include="Views\Benevoles\Random.cshtml" />
+    <Content Include="Views\Postes\Create.cshtml" />
+    <Content Include="Views\Postes\Delete.cshtml" />
+    <Content Include="Views\Postes\Details.cshtml" />
+    <Content Include="Views\Postes\Edit.cshtml" />
+    <Content Include="Views\Postes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -266,6 +284,14 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201910280934451_InitialCreate.resx">
+      <DependentUpon>201910280934451_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910311506226_AddBenevoleInfo.resx">
+      <DependentUpon>201910311506226_AddBenevoleInfo.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
