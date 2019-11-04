@@ -187,6 +187,10 @@
     <Compile Include="Migrations\201910311506226_AddBenevoleInfo.Designer.cs">
       <DependentUpon>201910311506226_AddBenevoleInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910311518274_UpdateTel.cs" />
+    <Compile Include="Migrations\201910311518274_UpdateTel.Designer.cs">
+      <DependentUpon>201910311518274_UpdateTel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Benevoles.cs" />
@@ -291,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910311506226_AddBenevoleInfo.resx">
       <DependentUpon>201910311506226_AddBenevoleInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910311518274_UpdateTel.resx">
+      <DependentUpon>201910311518274_UpdateTel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

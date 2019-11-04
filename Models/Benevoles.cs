@@ -13,7 +13,7 @@ namespace ProjectBv2.Models
         public string prenom { get; set; }
         public string responsable { get; set; }
         public Binary jour { get; set; }
-        public string téléphoine { get; set; }
+        public string telephone { get; set; }
         public string permis { get; set; }
         public DateTime Datenaissance { get; set; }
         public string mail { get; set; }
